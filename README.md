@@ -1,5 +1,3 @@
-# content-synth-ai
-
 # Content Synth AI
 
 An AI-powered social media content generation system for educational marketing campaigns.
@@ -20,12 +18,12 @@ Content Synth uses generative AI to automatically create engaging social media c
 - AI-generated captions using GPT models
 - Automated hashtag recommendations
 - Data-driven insights from real photography business analytics
-- Cross-platform content optimization (Instagram & Facebook)
-- Brand tone customization
+- Cross-platform content optimisation (Instagram & Facebook)
+- Brand tone customisation
 
 ## Data Sources
 
-This project analyzes 502 days of real business data including:
+This project analyses 502 days of real business data, including:
 - Social media performance metrics (107 posts)
 - Optimal posting times analysis
 - Platform-specific engagement patterns
@@ -43,7 +41,7 @@ This project analyzes 502 days of real business data including:
 - Streamlit
 - OpenAI GPT API
 - Pandas for data analysis
-- Data visualization libraries
+- Data visualisation libraries
 
 ## Project Status
 
