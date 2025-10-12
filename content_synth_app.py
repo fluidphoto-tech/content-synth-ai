@@ -507,7 +507,7 @@ with col2:
                 hashtags = get_relevant_hashtags(viral_insights, platform, campaign_type)
                 
                 try:
-                    client = anthropic.Anthropic(api_key=st.session_state.api_key)
+                    client = Anthropic(api_key=st.session_state.api_key)
                     message = client.messages.create(
                         model="claude-sonnet-4-20250514",
                         max_tokens=1024,
