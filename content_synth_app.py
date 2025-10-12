@@ -1,6 +1,6 @@
 # content_synth_app.py - UPDATED VERSION
 import streamlit as st
-import anthropic
+from anthropic import Anthropic
 import pandas as pd
 from datetime import datetime
 from pathlib import Path
