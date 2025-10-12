@@ -146,7 +146,7 @@ CONTENT_TEMPLATES = {
 def load_datasets():
     """Load all 3 datasets and return them"""
     try:
-        data_path = Path("../data")
+        data_path = Path("/data")
         
         photo_df = pd.read_csv(data_path / "Photography_Business_Master_Analytics_With_PostingTimes.csv")
         clustering_df = pd.read_excel(data_path / "Clustering_Marketing_FinalClean.xlsx")
@@ -373,7 +373,7 @@ photo_df, clustering_df, viral_df, error = load_datasets()
 
 if error:
     st.error(f"⚠️ Error loading datasets: {error}")
-    st.info("💡 Make sure your data files are in the '../data' folder relative to this script!")
+    st.info("💡 Make sure your data files are in the '/data' folder relative to this script!")
     st.stop()
 
 # Extract insights
