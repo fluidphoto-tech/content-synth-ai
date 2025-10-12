@@ -146,7 +146,7 @@ CONTENT_TEMPLATES = {
 def load_datasets():
     """Load all 3 datasets and return them"""
     try:
-        data_path = Path("/data")
+        data_path = Path("data")
         
         photo_df = pd.read_csv(data_path / "Photography_Business_Master_Analytics_With_PostingTimes.csv")
         clustering_df = pd.read_excel(data_path / "Clustering_Marketing_FinalClean.xlsx")
