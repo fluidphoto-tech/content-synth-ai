@@ -13,6 +13,23 @@ st.set_page_config(
     layout="wide"
 )
 
+# API KEY SETUP - ADD THIS HERE
+api_key = st.secrets.get("ANTHROPIC_API_KEY", None)
+
+if not api_key:
+    api_key = st.text_input(
+        "🔑 Claude API Key", 
+        type="password",
+        help="Enter your Anthropic API key"
+    )
+
+# Only initialize client if we have a key
+if api_key:
+    client = Anthropic(api_key=api_key)
+else:
+    st.warning("Please enter your Claude API key to continue")
+    st.stop()
+
 # Custom CSS
 st.markdown("""
 <style>
