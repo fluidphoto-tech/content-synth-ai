@@ -23,7 +23,7 @@ if not api_key:
         help="Enter your Anthropic API key"
     )
 
-# Only initialize client if we have a key
+# Only initialise client if we have a key
 if api_key:
     client = Anthropic(api_key=api_key)
 else:
@@ -125,13 +125,13 @@ CONTENT_TEMPLATES = {
         "description": "1033% improvement from dual-platform posting"
     },
     "Mobile-First Student Engagement": {
-        "mobile_optimization": "85.71%",
+        "mobile_optimisation": "85.71%",
         "structure": {
             "hook": "Scroll-stopping question",
             "content": "Bite-sized learning tip",
             "cta": "Simple action (save, share, tag)"
         },
-        "description": "Optimized for 85.71% mobile audience"
+        "description": "Optimised for 85.71% mobile audience"
     },
     "Music/Arts Learning Content": {
         "top_interest": "music",
@@ -321,7 +321,7 @@ REQUIREMENTS:
 - Lead with benefit/transformation
 - Include natural call-to-action (5 words max)
 - NO hashtags (provided separately)
-- Mobile-optimized for {photo_insights['mobile_pct']}% mobile users
+- Mobile-optimised for {photo_insights['mobile_pct']}% mobile users
 
 Write ONLY the caption text following the template structure:"""
     
@@ -398,7 +398,7 @@ photo_insights = extract_photography_insights(photo_df)
 clustering_insights = extract_clustering_insights(clustering_df)
 viral_insights = extract_viral_insights(viral_df)
 
-# Initialize session state
+# Initialise session state
 if 'generated_caption' not in st.session_state:
     st.session_state.generated_caption = None
 if 'api_key' not in st.session_state:
@@ -489,10 +489,10 @@ with col2:
     st.markdown('<div class="section-header">📤 OUTPUT SECTION</div>', unsafe_allow_html=True)
     
     if generate_clicked:
-        if not st.session_state.api_key:
-            st.error("⚠️ Please enter your Claude API key in the sidebar!")
-        else:
-            with st.spinner("🤖 AI is using content templates and analyzing data..."):
+    if not api_key:
+        st.error("⚠️ Please configure your Claude API key to continue!")
+    else:
+        with st.spinner("🤖 AI is using content templates and analysing data..."):
                 
                 # Select and use template
                 template_name = select_best_template(campaign_type, "Friday")
@@ -522,7 +522,7 @@ with col2:
                         f"Friday engagement: {photo_insights['friday_multiplier']}x boost",
                         f"Mobile-first design: {photo_insights['mobile_pct']}% mobile usage",
                         f"Target audience: {clustering_insights['female_pct']}% female students",
-                        f"{platform} engagement optimized"
+                        f"{platform} engagement optimised"
                     ]
                     
                     # Store in session state
@@ -562,7 +562,7 @@ with col2:
         st.markdown(f'<div class="caption-text">{result["caption"]}</div>', unsafe_allow_html=True)
         
         # Hashtags
-        st.markdown("**#️⃣ Optimized Hashtags:**")
+        st.markdown("**#️⃣ Optimised Hashtags:**")
         st.markdown(f'<div class="hashtag-box">{" ".join(result["hashtags"])}</div>', unsafe_allow_html=True)
         
         # Data insights
@@ -573,7 +573,7 @@ with col2:
             (f"Friday engagement: {photo_insights['friday_multiplier']}x boost", "Photography"),
             (f"Mobile-first: {photo_insights['mobile_pct']}% mobile", "Photography"),
             (f"Audience: {clustering_insights['female_pct']}% female", "Clustering"),
-            (f"{result['platform']} optimized", "Viral Trends")
+            (f"{result['platform']} optimised", "Viral Trends")
         ]
         
         for insight, source in insights_with_sources:
