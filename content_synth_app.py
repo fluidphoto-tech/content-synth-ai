@@ -31,7 +31,7 @@ st.markdown("""
         margin: 1rem 0;
         font-weight: bold;
     }
-    .output-box {
+    .output-box {data/
         background-color: #e8f5e9;
         border: 2px solid #27ae60;
         border-radius: 8px;
