@@ -409,14 +409,6 @@ if 'generation_history' not in st.session_state:
 # Sidebar
 with st.sidebar:
     st.header("⚙️ Settings")
-    api_key = st.text_input(
-        "Claude API Key",
-        type="password",
-        value=st.session_state.api_key,
-        help="Enter your Anthropic API key"
-    )
-    if api_key:
-        st.session_state.api_key = api_key
     
     st.markdown("---")
     st.markdown("### 📊 Live Data Sources")
