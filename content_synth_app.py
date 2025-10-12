@@ -489,10 +489,10 @@ with col2:
     st.markdown('<div class="section-header">📤 OUTPUT SECTION</div>', unsafe_allow_html=True)
     
     if generate_clicked:
-    if not api_key:
-        st.error("⚠️ Please configure your Claude API key to continue!")
-    else:
-        with st.spinner("🤖 AI is using content templates and analysing data..."):
+        if not api_key:
+            st.error("⚠️ Please configure your Claude API key to continue!")
+        else:
+            with st.spinner("🤖 AI is using content templates and analysing data..."):
                 
                 # Select and use template
                 template_name = select_best_template(campaign_type, "Friday")
